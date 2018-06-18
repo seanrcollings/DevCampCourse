@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HTML5 Forms</title>
+	</head>
+	
+	<body>
+		<form action = 'contact_form.php' method = 'get' oninput = 'invoice.value = parseInt(total.value)+parseInt(shipping.value)'>
+			
+			<label for = 'name'>Name:</label>
+			<input type = 'text' name = 'name' placeholder = 'First name Last Name' required> <br>
+			
+			<label for = 'name'>Email:</label> 
+			<input type = 'text' name = 'email' placeholder = 'something@gmail.com' required><br>
+			
+			<label for = 'name'>Message:</label><br> 
+			<textarea name = 'message', rows = 15 cols = '100'></textarea><br>
+
+			<label for = 'source'>How did you hear about us</label>
+			<select name = 'source'>
+				<option value = 'google'>Google</option>
+				<option value = 'yahoo'>Yahoo</option>
+				<option value = 'facebook'>Facebook</option>
+				<option value = 'twitter'>Twitter</option>
+			</select><br>
+
+			<label for = 'shipping_method'>Shipping Method:</label>
+			<select name ='shipping_method'>
+				<optgroup label = 'Buisness'>
+					<option value = 'biz_overnight'>Overnight</option>
+					<option value = 'biz_ground'>Ground</option>
+				</optgroup>
+
+				<optgroup label = 'Residential'>
+					<option value = 'biz_overnight'>Overnight</option>
+					<option value = 'biz_ground'>Ground</option>
+				</optgroup>
+			</select>
+			<hr>
+
+			<label for = 'options'>Packing Requirements:</label><br> 
+			<input type = 'checkbox' name = 'options' value = 'premium'>Premium<br>
+			<input type = 'checkbox' name = 'options' value = 'rush'>Rush<br>
+			<input type = 'checkbox' name = 'options' value = 'automated'>Automated<br>
+
+			<hr>
+
+			<label for = 'delivery'>Shipping Prefrences:</label><br>
+			<input type = 'radio' name = 'deliver' value = 'in_store'>In Store<br>
+			<input type = 'radio' name = 'deliver' value = 'shipping'>Shipping<br>			 
+
+			<hr>
+
+			<label for = 'total'>Subtotal:</label><br>
+			<input type = 'text' name = 'total' value = '0'/><br>
+
+			<label for = 'total'>Shipping:</label><br>
+			<input type = 'text' name = 'shipping' value = '9'/><br>
+			Total for Invoice $<output name = 'invoice' for = 'total tax'></output>
+			<hr>
+			<input type = 'submit' value = 'Send Contact Request'>
+		</form>
+	</body>
+
+
+</html>
