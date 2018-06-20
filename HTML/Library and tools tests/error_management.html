@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Error Management</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+  </head>
+  <body>
+  </body>
+
+  <script>
+    class DevcampError extends Error {
+      constructor(msg = 'An error occured', ...params) {
+        super(...params);
+        this.msg = msg;
+      }
+    }
+
+    function siteComponent(func) {
+      return func();
+    }
+
+    widget = () => {
+      return '<div>Hi there</div>'
+    }
+
+    try {
+      console.log(siteComponent('oops'));
+    } catch(e) {
+      throw new DevcampError('DevcampError', e)
+    }
+  </script>
+</html>
