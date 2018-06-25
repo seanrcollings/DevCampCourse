@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Search</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|PT+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <style>
+
+    .page_wrapper {
+      font-family: 'Lato', serif;
+    }
+
+    .search_bar_wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+      position: relative;
+    }
+
+    .search_bar_wrapper img {
+      width: 40%;
+      margin: 50px;
+    }
+
+    .search_bar input {
+      width: 66vw;
+      height: 4em;
+      box-shadow: 0px 1px 10px 2px lightgrey;
+      border: none;
+      border-radius: 2px; 
+      text-indent: 38px;
+    }
+
+    .search_bar input[type = 'text'] {
+      font-size: 26px;
+      color: grey;
+    }
+
+    .search_bar input:focus {
+      outline: none;
+    }
+
+    .search_bar p {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 23px;
+      font-size: 14px;
+      color: grey;
+    }
+
+    .recent_posts {
+      align-content: right;
+    }
+
+    .search_bar i {
+      position: absolute;
+      font-size: 30px;
+      color: grey;
+      padding-top: 35px;
+      padding-left: 5px;
+    }
+
+    .recent_posts {
+      margin-top: 200px;
+      margin-left: 15%;
+      margin-bottom: 20px
+    }
+    
+    .recent_posts h3 {
+      color: #0079ff;
+    }
+
+    .content_wrapper {
+      display: flex;
+    }
+    .content_wrapper p {
+      margin-right: 30px;
+      width: 20%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class = 'page_wrapper'>
+
+    <div class = 'search_bar_wrapper'>
+      <img class = 'logo' src = 'img/text_logo.png'>
+      
+      <div class = 'search_bar'>
+        <i class="fas fa-search"></i>
+        <input type = 'text' placeholder = 'Search DailySmarty'>
+        <p>Press return to search</p>
+      </div> <!--end of search_bar-->
+    </div><!-- end of search_bar_wrapper-->
+
+    <div class = 'recent_posts'>
+      <h3>Recent Posts</h3>
+      <div class = 'content_wrapper'>
+        <p>Guide to rendering points on a Google Map Javascript</p>
+        <p>Guide to rendering points on a Google Map Javascript</p>
+        <p>Guide to rendering points on a Google Map Javascript</p>
+      </div>
+    </div><!-- End of recent_posts-->
+
+  </div> <!-- End of page_wrapper-->
+</body>
+</html>
