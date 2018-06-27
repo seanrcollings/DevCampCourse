@@ -1,0 +1,82 @@
+html {
+    font-family: Helvetica, Arial, sans-serif;    
+    color: white;
+    height: 100%
+}
+
+body {
+    background-image: url('img/download.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* HEADER STYLINGS */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header > * {
+    display: inline-block;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+header ul li {
+    display: inline;
+    font-size: .8em;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.left-content img {
+    width: 100px;
+    padding: 15px;
+}
+
+/* Content Stylings */
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
+}
+
+.title {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    padding: 20px 150px;
+}
+
+.title h1 {
+    text-align: center;
+}
+
+ .button-wrapper {
+    margin: 50px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 0px 3px;
+}
+
+.newsletter {
+    margin: 15px;
+    text-align: center;
+}
+
+.button-wrapper a {
+    text-decoration: none;
+    color: white; 
+}

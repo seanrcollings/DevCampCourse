@@ -1,0 +1,109 @@
+* {
+	margin: 0px;
+}
+
+
+#content {
+	margin-top: 150px !important;
+	text-align: center;
+	min-height: 100%;
+	margin: 0 auto; /* the bottom margin is the negative value of the footer's height */
+}
+
+.searchBox {
+	width: 600px;
+	height: 15px;
+	border: 1px solid #999999;
+	padding: 5px;
+	margin: 0px 0px 5px 0px;
+	
+}
+
+.button {
+	border-radius: 2px;
+	width: 120px;
+	height: 30px;
+	background-color: #ECEBEB;
+	color: #575757;
+	position: relative;
+	font-size: .70em;
+	font-family: Arial;
+	text-align: center;
+	font-weight: bold;
+	margin: 0px 5px 5px 5px;
+	border: 1px solid #CAC9C9;
+}
+
+.button:hover {
+	border: 1px solid #A6A6A6;
+	cursor: pointer;
+}
+
+#header {
+	display: block;
+	width: 100%;
+	background-color: #2d2d2d;
+	color: #bababa;
+	margin-bottom: 20px;
+}
+
+#header ul li {
+	list-style-type: none;
+	font-family: Arial;
+	font-size: .80em;
+	font-weight: bold;
+	display: inline-block;
+	margin: 10px 20px 7px 0px;
+}
+
+#header ul li:hover {
+	color: white;
+	cursor: pointer;
+}
+
+footer {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	border-top: 1px solid #d1d1d1;
+	text-align: right;
+	width: 100%;
+	background-color: white;
+	color: #787878;
+	margin-bottom: 0px;
+	
+}
+
+footer ul li {
+	list-style-type: none;
+	font-family: sans-serif;
+	font-size: .8em;
+	display: inline-block;
+	margin: 10px;
+}
+
+footer ul li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#signin {
+	float: right;
+	border-radius: 2px;
+	width: 60px;
+	height: 8px;
+	background-color: #CC3300;
+	color: white;
+	position: relative;
+	font-size: .75em;
+	font-family: Arial;
+	text-align: center;
+	padding: 9px;
+	font-weight: 500;
+	margin: 10px 30px 20px 20px;
+}
+
+#signin:hover {
+	background-color: #993300;
+	cursor: pointer;
+}

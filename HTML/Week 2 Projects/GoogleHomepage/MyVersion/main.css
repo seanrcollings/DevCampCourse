@@ -1,0 +1,54 @@
+html {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: .8rem;
+    align-items: center;
+}
+
+header .left-header-content {
+    grid-column: 1;
+}
+
+
+header .right-header-content {
+    grid-column: 2;
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .right-header-content a, button, .left-header-content a {
+    margin-right: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    opacity: .75;
+    align-self: center;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: grey;
+}
+
+ .right-header-content button { /* Sign In Button */
+    background: #4285f4;
+    border-radius: 3px;
+    border: none;
+    padding: .5em .80em;
+    color: white;
+    align-self: center;
+    font-weight: 600
+}
+
+/* Search Bar Content Stylings*/
+
+.content-wrapper {
+    
+}

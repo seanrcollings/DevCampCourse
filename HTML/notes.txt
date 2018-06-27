@@ -1,0 +1,8 @@
+-- CENTER A DIV WITH FLEX BOX --
+
+div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
