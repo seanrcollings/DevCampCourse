@@ -80,3 +80,33 @@ button {
     text-decoration: none;
     color: white; 
 }
+
+/* Footer styles */
+
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+}
+
+.footer-wrapper ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 15px;
+    font-size:15px;
+}
+
+.footer-wrapper ul i {
+    font-size: 4px;
+    position: relative;
+    bottom: 3px;
+}
+
+.footer-wrapper ul li img {
+    width: 20px;
+    position: relative;
+    top: 3px;
+}
