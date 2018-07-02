@@ -3,31 +3,33 @@ import React, { Component } from 'react';
 import Input from './input';
 import Content from './content';
 
+const INITIAL_STATE = {
+    color: '',
+    pluralNoun: '',
+    adjectiveOne: '',
+    celebOne: '',
+    adjectiveTwo: '',
+    nounOne: '',
+    numberOne: '',
+    numberTwo: '',
+    nounTwo: '',
+    adjectiveThree: '',
+    celebTwo: '',
+    celebThree: '',
+    adjectiveFour: '',
+    nounThree: '',
+    celebFour: '',
+    adjectiveFive: '',
+    contentVisible: false,
+}
+
+
 class Card extends Component {
 
     constructor() {
         super()
 
-         this.state = {
-            color: '',
-            pluralNoun: '',
-            adjectiveOne: '',
-            celebOne: '',
-            adjectiveTwo: '',
-            nounOne: '',
-            numberOne: '',
-            numberTwo: '',
-            nounTwo: '',
-            adjectiveThree: '',
-            celebTwo: '',
-            celebThree: '',
-            adjectiveFour: '',
-            nounThree: '',
-            celebFour: '',
-            adjectiveFive: '',
-            contentVisible: false
-            
-        };
+        this.state = INITIAL_STATE;
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -39,7 +41,11 @@ class Card extends Component {
 
     handleFormSubmit(event) {
         event.preventDefault();
-        this.setState({ contentVisible: !this.state.contentVisible}) 
+        if (this.state.contentVisible) {
+            this.setState(INITIAL_STATE)
+        } else {
+            this.setState({ contentVisible: true})
+        } 
     }
 
     render() {
@@ -58,21 +64,24 @@ class Card extends Component {
             {title: 'Noun', state: this.state.nounTwo, name: 'nounTwo'},
             {title: 'Adjective', state: this.state.adjectiveThree, name: 'adjectiveThree'},
             {title: 'Celebrity', state: this.state.celebTwo, name: 'celebTwo'},
-            {title: 'Celebrity', state: this.state.celebThree, name: 'CelebThree'},
+            {title: 'Celebrity', state: this.state.celebThree, name: 'celebThree'},
 
             {title: 'Adjective', state: this.state.adjectiveFour, name: 'adjectiveFour'},
             {title: 'Noun', state: this.state.nounThrees, name: 'nounThree'},
             {title: 'Celebrity', state: this.state.celebFour, name: 'celebFour'},
             {title: 'Adjective', state: this.state.adjectiveFive, name: 'adjectiveFive'},
         ]
+        
         return (
             <form onSubmit = {this.handleFormSubmit} className = 'card'>
                 <div className = 'card__inputs'>
                 {
-                    inputData.map(data => Input((data), this.handleInputChange))
+                    inputData.map((data, index) => {
+                        return Input((data), this.handleInputChange, index);
+                    })
                 }
                 </div>
-                <button type = 'submit'>{!this.state.contenVisible ? 'Generate Mad Lib' : 'Clear Form'}</button>
+                <button className = {`card__${!this.state.contentVisible ? 'generate' : 'clear'}`}type = 'submit'>{!this.state.contentVisible ? 'Generate Mad Lib' : 'Clear Form'}</button>
                 {
                     this.state.contentVisible ? <Content data = {this.state}/> : <div></div>
                 }
