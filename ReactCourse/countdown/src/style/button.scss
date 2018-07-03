@@ -1,0 +1,18 @@
+button {
+    grid-row: 3/4;
+    grid-column: 5/10;
+    height: 50px;
+    width: 350px;
+    background-color: $color-blue-two;
+    border: none;
+    color: white;
+    font-family: 'Montserrat';
+    line-height: 22px;
+    justify-self: center;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+
+    &:active {
+        background-color: $color-blue-one;
+        font-weight: 700;
+    }
+}
