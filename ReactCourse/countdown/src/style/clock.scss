@@ -1,21 +1,22 @@
 .clock {
-    grid-row: 3/4;
-    grid-column: 2/10;
-    background-color: #444;
-    height: 80%;
-    align-self: end;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-    padding: 0px 120px;
-    
-    z-index: 10;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 275px));
     align-content: center;
     justify-content: center;
     text-align: center;
+    grid-row: 3/4;
+    grid-column: 2/10;
+
+    background-color: #444;
+    height: 75%;
+    align-self: end;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    
+    z-index: 10;
 
     &__box {
         display: flex;
+        flex-direction: column;
     }
 
     &__title {
@@ -23,6 +24,9 @@
         line-height: 25px;
         color: #f7d754;
         font-family: 'Roboto Condensed';
+        padding-right: 90px;
+        position: relative;
+        top: 30px;
     }
 
     &__amount {
