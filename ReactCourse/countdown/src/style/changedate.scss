@@ -1,18 +1,37 @@
-.change-date {
+
+.change-date-wrapper {
     grid-row: 2/3;
     grid-column: 4/5;
     z-index: 11;
     height: 20px;
+    grid-row: 2/3;
+    grid-column: 4/5;
+    z-index: 11;
+    
+}
 
-    font-size: 24px;
+.change-date {
+    font-size: 20px;
     line-height: 19px;
-    color: black;
     background-color: transparent;
     border: none;
+    font-family: 'Montserrat';
+    width: 250px;
+    color: white;
 
-    transform: rotate(-72deg);
-
+    transform: rotate(-66deg);
     align-content: start;
     justify-content: start;
+    position: relative;
+    right: 100px;
+    top: 70px;
+
+    &:focus {
+        outline: none;
+    }
+
+    & i {
+        margin-right: 15px;
+    }
 
 }
