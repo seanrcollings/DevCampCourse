@@ -1,0 +1,19 @@
+.library-course {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: 1fr 1fr;
+    background-color: cornflowerblue;
+    
+    &__title-arrow {
+        grid-row: 1/2;
+    }
+
+    &__arrow {
+        grid-row: 1/2;
+        display: inline-block
+    }
+
+    &__description {
+        grid-row: 2/3;
+    }
+}

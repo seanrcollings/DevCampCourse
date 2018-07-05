@@ -1,0 +1,12 @@
+- Components -
+
+Library.js
+    - LibraryCourse.js
+        - icon.js
+        - arrow.js
+        - addButton.js
+
+schedule.js
+    - scheduleCourse.js
+    - gradient.js
+    - progressTracker.js
