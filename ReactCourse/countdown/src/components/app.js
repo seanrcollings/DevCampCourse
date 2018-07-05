@@ -103,7 +103,7 @@ export default class App extends Component {
 
     // const month = ( date.getMonth().toString().length === 1 ?
     //  `0${date.getMonth() + 1}` : 
-    //  (date.getMonth() + 1).toString() );
+    // (date.getMonth() + 1).toString() );
 
     // const day = ( date.getDay().toString().length === 1 ? 
     // `0${date.getDay() + 1}` : 
