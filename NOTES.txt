@@ -1,3 +1,0 @@
--- CREATE NEW REACT PROJECT --
-npx create-react-app app-name
-	// insure you are inside the directory you want your app to be created in
