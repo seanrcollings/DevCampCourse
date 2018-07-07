@@ -1,0 +1,15 @@
+.progress-tracker {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 76px;
+    background-color: rgba(255, 255, 255, 0.3);
+    
+
+    &__title {
+        grid-column: 1/2;
+    }
+
+    &__percentage {
+        grid-column: 2/3;
+    }
+}

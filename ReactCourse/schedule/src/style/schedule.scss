@@ -1,0 +1,5 @@
+.schedule {
+    display: grid;
+    grid-template-rows: 100px 1fr 1fr 1fr [progress-s] 76px [progress-e];
+    grid-row-gap: 22px;
+}
