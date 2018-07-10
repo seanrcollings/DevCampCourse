@@ -35,20 +35,19 @@ class LibraryCourse extends Component {
             <div id = {`library-course-${this.props.id}`} className = 'library-course'>
                 <div className = 'library-course__title-check'>
                     <div className = 'library-course__title'>{this.props.title}</div>
-                    { Icon('fas fa-check', 'library-course__check') }
+                {this.props.enrolled ? Icon('fas fa-check', 'library-course__check') :  ''}
                 </div>
                 <Arrow callback = { (status) => this.handleCallback(status) } id = {this.props.id} className = 'library-course__arrow'/>
-                <Action id = {this.props.id} status = {this.state.status} onClick = {() => this.props.toggleEnrolled(this.props.id)} className = 'library-course__action'/> 
+                <Action id = {this.props.id} status = {this.state.status} onClick = {() => this.props.toggleEnrolled(this.props.id)} className = {`library-course__action ${this.props.enrolled ? 'action-remove': ''}` }/> 
             
-            <AnimateHeight
-            duration = { 300 }
-            height = {this.state.height}
-            >
-                <div className = 'library-course__description'>
-                    <label>Course Description</label>
-                    <p>{this.props.description}</p>
-                </div>
-            </AnimateHeight>
+                <AnimateHeight
+                duration = { 300 }
+                height = {this.state.height}>
+                    <div className = 'library-course__description'>
+                        <label>Course Description</label>
+                        <p>{this.props.description}</p>
+                    </div>
+                </AnimateHeight>
             </div>
         )
     }

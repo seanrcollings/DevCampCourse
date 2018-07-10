@@ -2,25 +2,21 @@
 @import 'library';
 @import 'libraryCourse';
 @import 'arrow';
-@import 'scheduleCourse';
 @import 'schedule';
+@import 'scheduleCourse';
 @import 'progressTracker';
 @import 'addRemoveAction';
+
 
 .home {
     height: 100vh;
     width: 100vw;
+
     display: grid;
-    grid-template-columns: [library-s]1fr 1fr [library-e schedule-s] 1fr [schedule-e];
+    grid-template-columns: [library-s] 1fr 1fr [schedule-s] 50px [library-e] 1fr [schedule-e];
     grid-template-rows: 1fr;
 
-}
-
-.schedule {
-    grid-column: schedule-s/schedule-e;
-    position: relative;
-    height: 100%;
-    width: 100%;
+    overflow: hidden;
 }
 
 .gradient {
@@ -28,5 +24,5 @@
     height: 100%;
     width: 100%;
     background: linear-gradient(120deg, $color-purple 0%, $color-light-blue 100%);
-    z-index: -10;
+    z-index: -50;
 }

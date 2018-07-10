@@ -6,14 +6,21 @@
     width: 100%;
 
     display: grid;
-    grid-template-rows: 100px repeat(auto-fill, 75px) [progress-s] 76px [progress-e];
+    grid-template-rows: [space-one-s] 1fr [space-one-e] repeat(5, 80px) [progress-s] 1fr [progress-e];
     grid-row-gap: 22px;
-
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    padding-top: 237px;
+    
     &__title {
-        border-left: 1px solid $color-subtle-grey;
-        padding-left: 30px;
+        position: absolute;
+        top: 154px;
+
         font-family: $font-alegreya;
+        color: white;
         font-size: 20px;
         text-align: center;
+        @include border-left
     }
 }

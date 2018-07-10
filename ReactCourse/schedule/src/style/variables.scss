@@ -1,11 +1,18 @@
 $color-purple: #6F48CE;
 $color-light-blue: #32CBE8;
 $color-blue: #487BCE;
-$color-grey: #4D4D4D;
+$color-gray: #4D4D4D;
 $color-subtle-grey: rgba(255, 255, 255, 0.52);
 $color-subtle-black: #333;
 
 
 $font-alegreya: 'Aleygreya';
 $font-mont: 'Montserrate';
-$font-lato: 'Lato'
+$font-lato: 'Lato';
+
+@mixin border-left {
+    border-left: 2px solid $color-subtle-grey;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 30px;
+}

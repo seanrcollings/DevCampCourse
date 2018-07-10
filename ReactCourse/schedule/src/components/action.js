@@ -26,15 +26,7 @@ class Action extends Component {
             className = {`${this.props.className} action`}>
                 
             </a>
-            // <div className = {`${this.props.className} action`}>
-            //     <button onClick = {() => this.props.onClick()} className = {`${this.props.className}`}>
-            //         { Icon('fas fa-plus-circle', 'action')}
-            //         {/* fas fa-times-circle */}
-            //     </button>
-            // </div>
-
-
-         )
+        )
     }
 }
 
