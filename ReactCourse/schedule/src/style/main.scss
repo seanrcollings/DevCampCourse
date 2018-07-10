@@ -5,6 +5,7 @@
 @import 'scheduleCourse';
 @import 'schedule';
 @import 'progressTracker';
+@import 'addRemoveAction';
 
 .home {
     height: 100vh;
@@ -12,6 +13,7 @@
     display: grid;
     grid-template-columns: [library-s]1fr 1fr [library-e schedule-s] 1fr [schedule-e];
     grid-template-rows: 1fr;
+
 }
 
 .schedule {

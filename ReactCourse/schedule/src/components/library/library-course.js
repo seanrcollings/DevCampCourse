@@ -6,20 +6,49 @@ import Icon from '../icon';
 import Arrow from './arrow';
 import Action from '../action';
 
+import AnimateHeight from 'react-animate-height';
+
 class LibraryCourse extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            status: true,
+            height: 0
+        };
+    }
+
+
+    handleCallback = function(status) {
+        let height = (this.state.height === 0 ? 'auto' : 0) ;
+        if(!status) {
+            document.getElementById(`library-course-${this.props.id}`).classList.add('library-course-selected');
+        } else {
+            document.getElementById(`library-course-${this.props.id}`).classList.remove('library-course-selected');
+        }
+        this.setState({ status, height })
+      }.bind(this)
+
     render() {
          return (
-            <div className = 'library-course'>
+            <div id = {`library-course-${this.props.id}`} className = 'library-course'>
                 <div className = 'library-course__title-check'>
-                    <label className = 'library-course__title'>{this.props.title}</label>
+                    <div className = 'library-course__title'>{this.props.title}</div>
                     { Icon('fas fa-check', 'library-course__check') }
                 </div>
-                <Arrow className = 'library-course__arrow'/>
-                <Action onClick = {() => this.props.toggleEnrolled(this.props.id)} className = 'library-course__action'/> {/* Error is here, this.props.id is undefined */}
+                <Arrow callback = { (status) => this.handleCallback(status) } id = {this.props.id} className = 'library-course__arrow'/>
+                <Action id = {this.props.id} status = {this.state.status} onClick = {() => this.props.toggleEnrolled(this.props.id)} className = 'library-course__action'/> 
+            
+            <AnimateHeight
+            duration = { 300 }
+            height = {this.state.height}
+            >
                 <div className = 'library-course__description'>
                     <label>Course Description</label>
                     <p>{this.props.description}</p>
                 </div>
+            </AnimateHeight>
             </div>
         )
     }

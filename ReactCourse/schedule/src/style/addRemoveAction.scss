@@ -1,0 +1,50 @@
+.action {
+    background-color: black;
+    font-size: 16px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.action {
+    &:after,
+    &:before {
+        content: '';
+        display: block;
+        background-color: white;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        transition: all .3s ease;
+    }
+
+    &:before {
+        height: 1em;
+        width: .2em
+    }
+
+    &:after {
+        height: .2em;
+        width: 1em;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.action-remove {
+    &:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &:after {
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
+}
