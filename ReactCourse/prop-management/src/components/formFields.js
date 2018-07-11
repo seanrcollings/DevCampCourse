@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 
-class FormInput extends Component() {
+class FormInput extends Component {
     render() {
-        const {className, title, name} = this.props;
         return (
             <div className = 'form-input'>
-                <input className={`${className} form-inputs`}/>
+            <label>{this.props.title}</label>
+                <input className={`${this.props.className} form-inputs`}/>
             </div>
         )
     }
 }
 
-export default FormInput;
+export { FormInput };

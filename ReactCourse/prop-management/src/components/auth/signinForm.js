@@ -18,7 +18,8 @@ class SignInForm extends Component {
 }
 
 SignInForm = reduxForm({
-    from: 'signin'
+    form: 'signin'
 })(SignInForm);
 
-export default SignInForm;
+export default SignInForm
+
