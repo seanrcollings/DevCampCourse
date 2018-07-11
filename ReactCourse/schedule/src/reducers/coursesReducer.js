@@ -18,7 +18,7 @@ export default function (state = [], action) {
 
     case CLEAR_ALL:
       return state.map(course => {
-        return { ...course, title: 'hi there', enrolled: false }
+        return { ...course, enrolled: false }
       })
 
     default:
