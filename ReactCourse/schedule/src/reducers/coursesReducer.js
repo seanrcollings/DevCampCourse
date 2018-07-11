@@ -1,23 +1,27 @@
-import { FETCH_COURSES, TOGGLE_ENROLLED } from '../actions/types';
+import { FETCH_COURSES, TOGGLE_ENROLLED, CLEAR_ALL } from '../actions/types';
 
-export default function(state = [], action) {
+export default function (state = [], action) {
   switch (action.type) {
-      case FETCH_COURSES:
-        return [
-          ...state,
-          ...action.payload
-        ]
-        case TOGGLE_ENROLLED:
-          const newCourses = state.map(course => {
-            if (course.id === action.payload) {
-              course.enrolled = !course.enrolled
-            }
-            return course 
-          })
-          return [
-            ...newCourses
-          ]
-      default:
-        return state;
+    case FETCH_COURSES:
+      return [
+        ...state,
+        ...action.payload
+      ]
+      
+    case TOGGLE_ENROLLED:
+      return state.map(course => {
+        if (course.id === action.payload) {
+          return { ...course, enrolled: !course.enrolled }
+        }
+        return course
+      })
+
+    case CLEAR_ALL:
+      return state.map(course => {
+        return { ...course, title: 'hi there', enrolled: false }
+      })
+
+    default:
+      return state;
   }
 } 

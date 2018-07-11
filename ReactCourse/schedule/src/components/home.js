@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Library from './library/library';
 import Schedule from './schedule/schedule';
+import ClearEnrollmentButton from './clearEnrolementsButton';
 
 
 class Home extends Component {
@@ -8,6 +9,7 @@ class Home extends Component {
     return (
       <div className = 'home'>
         <Library />
+        <ClearEnrollmentButton />
         <Schedule />
       </div>
     );
