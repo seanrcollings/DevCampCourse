@@ -6,30 +6,24 @@
 .sign-in-form {
     display: grid;
     justify-items: center;
-    
-
     &__title {
         width: 100%;
-        margin: 6.6rem; 
+        margin-top: 6.6rem;
     }
-
     &__email {
         margin-top: 7.7rem;
     }
-
     &__password {
         margin-top: 4rem;
     }
-
-    &__button {
+    &__login {
         margin-top: 8.8rem;
     }
-
     &__text-links {
         margin-top: 5.2rem;
     }
 
-    &__email,
+    &__email, 
     &__password {
         transform: translateX(-64.5px);
     }

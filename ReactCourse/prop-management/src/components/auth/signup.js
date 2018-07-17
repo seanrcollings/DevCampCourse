@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import * as actions from '../../actions'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-import SignUpForm from './signupForm';
+import SignupForm from './signupForm';
 
-
-class SignUp extends Component {
+class Signup extends Component {
 
     onSubmit = (fields) => {
         this.props.signUp(fields, () => {
-            console.log('navigate to dashboard')
-            this.props.history.push('/dashboard')
+            console.log('navigate to dashboard');
+            this.props.history.push('/dashboard');
         })
     }
+
     render() {
-         return (
-            <div className = 'sign-up'>
-               <SignUpForm onSubmit={ (event) => this.onSubmit(event)} /> 
+        return (
+            <div className='sign-up'>
+                <SignupForm onSubmit={(event) => this.onSubmit(event)}/>
             </div>
-         )
+        )
     }
 }
 
-export default connect(null, actions)(SignUp);
+export default connect(null, actions)(Signup);

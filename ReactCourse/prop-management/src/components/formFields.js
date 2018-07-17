@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 
 export class FormInput extends Component {
     render() {
-        const { className, title, input, type, placeholder } = this.props
+        const { className, title, input, type, placeholder } = this.props;
         return (
-            <div className = {`${className} form-input`}>
-                <div className = 'form-input__title'>{title}</div>
-                <input 
-                    className = 'form-input__input'
-                    type = {type}
+            <div className={`${className} form-input`}>
+                <label className='form-input__title'>{title}</label>
+                <input
+                    className='form-input__input'
+                    type={type}
                     {...input}
-                    placeholder = {placeholder}
+                    placeholder={placeholder}    
                 />
             </div>
         )
@@ -21,20 +21,17 @@ export class FormInput extends Component {
 
 export class FormButton extends Component {
     render() {
-        const { className, title, input, type} = this.props
+        const { className, title, input, type } = this.props;
         return (
-            <div className = {`${className} form-button`}>
-                <button 
-                    className= 'form-button__button'
-                    type = {type}
-                    {...input}
+            <div className={`${className} form-button`}>
+                <button
+                    className='form-button__button'
+                    type={type}
+                    {...input} 
                 >
-                    {title}
+                {title}
                 </button>
             </div>
         )
     }
 }
-
-
-

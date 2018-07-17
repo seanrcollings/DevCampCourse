@@ -6,23 +6,25 @@ import { Router, Route, Switch } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 import reducers from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose(window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore));
+const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.devToolsExtension ? window.devToolsExtension() : f => f)(createStore)));
 
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
 
 import Layout from './components/layout';
-import SignUp from './components/auth/signup';
-import SignIn from './components/auth/signin';
+
+import Signup from './components/auth/signup';
+import Signin from './components/auth/signin';
+
 import history from './history';
 import requireAuth from './components/requireAuth';
 
 class Dashboard extends Component {
   render() {
     return (
-      <div>
-        Hey There
-      </div>
+        <div>
+        hey there
+    </div>
     )
   }
 }
@@ -30,13 +32,14 @@ class Dashboard extends Component {
 function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-      <Router history={ history }>
+      <Router history={history}>
         <Switch>
           <Layout>
-            <Route path = '/' exact component = {SignIn}/>
-            <Route path = '/signin' exact component = {SignIn}/>
-            <Route path = '/signup' component = {SignUp}/>
-            <Route path = '/dashboard' exact component = {requireAuth(Dashboard)}/>
+            <Route path='/' exact component={Signin}/>
+            <Route path='/signin' component={Signin}/>
+            <Route path='/signup' component={Signup}/>
+
+            <Route path='/dashboard' component={requireAuth(Dashboard)}/>
           </Layout>
         </Switch>
       </Router>
