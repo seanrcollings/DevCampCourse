@@ -28,7 +28,8 @@ function main() {
             <Route path='/' exact component={Signin}/>
             <Route path='/signin' component={Signin}/>
             <Route path='/signup' component={Signup}/>
-            <Route path='/dashboard' component={requireAuth(Dashboard)}/>
+            {/* <Route path='/dashboard' component={requireAuth(Dashboard)}/> */}
+            <Route path='/dashboard' component={Dashboard}/>
           </Layout>
         </Switch>
       </Router>
