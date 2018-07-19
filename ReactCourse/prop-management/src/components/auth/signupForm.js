@@ -46,7 +46,7 @@ class SignupForm extends Component {
           component={FormInput}
         />
         <Field
-          className="sign-up-form__create-account"
+          className="sign-up-form__create-account account-button"
           name="createaccount"
           type="submit"
           title="Create Account"

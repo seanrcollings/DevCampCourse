@@ -30,7 +30,7 @@ class SigninForm extends Component {
           component={FormInput}
         />
         <Field
-          className="sign-in-form__login"
+          className="sign-in-form__login account-button"
           name="login"
           type="submit"
           title="Login"
