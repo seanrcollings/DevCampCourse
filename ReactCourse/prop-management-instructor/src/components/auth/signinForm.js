@@ -30,8 +30,7 @@ class SigninForm extends Component {
           component={FormInput}
         />
         <Field
-          wrapperClassName="sign-in-form__login"
-          buttonClassName="account-button"
+          className="sign-in-form__login"
           name="login"
           type="submit"
           title="Login"

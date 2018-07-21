@@ -1,0 +1,115 @@
+.requests-item {
+    display: grid;
+    grid-template-rows: [s title-s] 34px [title-e tenant-s] 34px [tenant-e e];
+    grid-template-columns: [icon-s] 100px [icon-e s title-s] minmax(40px, 1fr) [title-e arrow-s] 68px [arrow-e date-s] 100px [date-e e] 60px;
+
+    align-items: center;
+
+    &__icon {
+        grid-column: icon-s/icon-e;
+        grid-row: s/e;
+        justify-self: center;
+    }
+    &__title {
+        align-self: end;
+        grid-column: title-s/title-e;
+        grid-row: title-s/title-e;
+
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    &__tenant-unit {
+        align-self: start;
+        grid-column: title-s/title-e;
+        grid-row: tenant-s/tenant-e;
+    }
+    &__date {
+        grid-column: date-s/date-e;
+        grid-row: s/e;
+        text-align: right;
+    }
+    &__move {
+        grid-column: date-s/date-e;
+        grid-row: s/e;
+        justify-self: end;
+    }
+    &__description {
+        grid-column: s/e;
+    }
+    .item-description {
+        display: grid;
+        grid-column-gap: 4rem;
+        grid-auto-flow: column;
+        grid-template-columns: [image-s] 150px [image-e] 1fr;
+        grid-template-rows: 100px;
+    }
+}
+
+.bg-F8 {
+    background-color: $color-gray-F8;
+}
+
+.requests-item {
+    transition: all .3s ease;
+
+    
+    &__icon {
+        font-size: 2.7rem;
+    }
+    &__title {
+        &__text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 2.3rem;
+            margin-right: 2.5rem;
+        }
+        &__arrow {
+            color: $color-gray-4D;
+            font-size: 3rem;
+        }
+    }
+    &__tenant-unit {
+        color: $color-red-BA;
+        font-family: $font-encode-cond;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
+    &__date {
+        transition: all .3s ease;
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
+    &__move {
+        transition: all .3s ease;
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    .item-description {
+        margin-top: 1.4rem;
+        margin-bottom: 2.2rem;
+        &__img {
+            grid-column: image-s/image-e;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+        &__text {
+            font-size: 1.4rem;
+            line-height: 1.7rem;
+        }
+    }
+
+    &:hover {
+        background-color: $color-gray-F8;
+        .requests-item__move {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .requests-item__date {
+            transform: translate(-100px);
+        }
+    }
+
+
+}

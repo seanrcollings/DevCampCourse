@@ -41,11 +41,11 @@ export class FormTextArea extends Component {
 
 export class FormButton extends Component {
     render() {
-        const { className, title, input, type } = this.props;
+        const { wrapperClassName, buttonClassName, title, input, type } = this.props;
         return (
-            <div>
+            <div className={`${wrapperClassName}`}>
                 <button
-                    className={`${className}`}
+                    className={`${buttonClassName}`}
                     type={type}
                     {...input} 
                 >
