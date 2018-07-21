@@ -6,6 +6,7 @@
         width: 100%;
         margin-top: 6.6rem;
         grid-column: s/e;
+        grid-row: 1;
     }
 
     &__newsletter-title,
@@ -15,20 +16,28 @@
     }
 
     &__body {
+        grid-row: 3;
         margin-top: 2rem;
     }
 
     &__submit,
     &__cancel {
-        background-color: $color-red-BA;
-        color: white;
-        border: none;
+        grid-column: 1/-1;
+        grid-row: 1;
+        justify-self: end;
+        align-self: end;
+
+        margin-left: .2rem;
+        margin-bottom: 1.2rem;
     }
 
-    &__submit {
-        grid-column: 1/-1;
-        grid-row: 1/-1;
-        justify-self: end;
-        align-self: start;
+    &__cancel {
+        transform: translateX(-15.5rem);
+    }
+
+    &__image {
+        grid-row: 3;
+        grid-column: s;
+        align-self: end;
     }
 }

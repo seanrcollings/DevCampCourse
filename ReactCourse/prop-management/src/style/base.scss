@@ -32,13 +32,3 @@ body {
     grid-row: bar-s/bar-e;
     grid-column: page-s/page-e;
 }
-
-button{
-    &:focus {
-        outline: none;
-    }
-    &:hover {
-        cursor: pointer;
-    }
-    
-}

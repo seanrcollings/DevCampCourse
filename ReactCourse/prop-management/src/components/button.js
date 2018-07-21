@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-function Button({className, callback, text, icon}) {
+export default function Button({className, callback, text, icon}) {
     if(icon) {
         return (
             <a onClick={callback} className={`${className} button`}>
@@ -10,5 +9,3 @@ function Button({className, callback, text, icon}) {
         )
     } 
 }
-
-export default Button;

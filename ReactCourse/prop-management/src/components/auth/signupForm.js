@@ -46,8 +46,7 @@ class SignupForm extends Component {
           component={FormInput}
         />
         <Field
-          wrapperClassName="sign-up-form__create-account"
-          buttonClassName="account-button"
+          className="sign-up-form__create-account"
           name="createaccount"
           type="submit"
           title="Create Account"

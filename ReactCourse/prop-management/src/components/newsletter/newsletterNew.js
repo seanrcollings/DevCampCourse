@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
 
-import NewNewsletterForm from './newsletterNewForm'
+import NewNewsletterForm from './newsletterNewForm';
 
-class NewsletterNew extends Component {
+class NewNewsletter extends Component {
 
     onSubmit = (fields) => {
-        console.log('trying to handle submit')
+
+        // if(button == 'submit') {
+        //   // save new newsletter on the backend. perform a post request here.
+        //   console.log('trying to submit to backend.');
+        // } 
+        // this.props.history.push('/dashboard')
+        console.log('trying to submit');
+    }
+
+    onCancel = () => {
+        this.props.history.push('/dashboard')
+        // console.log('trying to cancel');
     }
 
     render() {
-         return (
-            <div className = 'new-newsletter'>
-                <NewNewsletterForm onSubmit={(event) => this.onSubmit(event)}/>
+        return (
+            <div className='new-newsletter'>
+                <NewNewsletterForm onCancel={() => this.onCancel()} onSubmit={(event) => this.onSubmit(event)}/>
             </div>
-         )
+        )
     }
 }
 
-export default NewsletterNew;
+export default NewNewsletter;

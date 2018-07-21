@@ -1,0 +1,34 @@
+.new-newsletter-form {
+    display: grid;
+    grid-template-columns: [s input-s] 1020px [input-e] 1fr [e];
+
+    &__title {
+        width: 100%;
+        margin-top: 6.6rem;
+        grid-column: s/e;
+    }
+
+    &__newsletter-title,
+    &__body {
+        margin-top: 4.1rem;
+        grid-column: input-s/input-e;
+    }
+
+    &__body {
+        margin-top: 2rem;
+    }
+
+    &__submit,
+    &__cancel {
+        background-color: $color-red-BA;
+        color: white;
+        border: none;
+    }
+
+    &__submit {
+        grid-column: 1/-1;
+        grid-row: 1/-1;
+        justify-self: end;
+        align-self: start;
+    }
+}

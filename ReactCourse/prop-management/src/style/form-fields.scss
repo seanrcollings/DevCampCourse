@@ -1,3 +1,4 @@
+
 // INPUT
 
 .form-input,
@@ -24,10 +25,7 @@
 .form-input,
 .form-textarea {
     &__title {
-        color: $color-red-BA;
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 2.3rem;
+        @include red-title;
     }
     &__input {
         height: 4rem;
@@ -54,33 +52,96 @@
 
 // BUTTON
 
-.account-button {
-    height: 4rem;
-    width: 21.6rem;
-    border-radius: 2rem;
-    background-color: $color-red-BA;
-
-    color: white;
-    font-size: 2.2rem;
-    font-weight: 500;
-    line-height: 2.8rem;
-    text-align: center;
+.form-button,
+.form-button-small,
+.form-image {
+    &__button,
+    &__replace {
+        transition: all .2s ease;
+        &:focus {
+            outline: none;
+        }
+        &:active {
+            transform: scale(0.95) translateY(2.05px);
+        }
+    }
 }
 
+.form-button {
+    &__button {
+        height: 4rem;
+        width: 21.6rem;
+        border-radius: 2rem;
+        background-color: $color-red-BA;
 
-.new-newsletter-form {
-    &__submit,
-    &__cancel {
-        border: 1px solid $color-gray-4D;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 2.8rem;
+        text-align: center;
+    }
+}
+
+.form-button-small {
+    &__button {
         border-radius: 1.6rem;
-        width: 130px;
+        border: 1px solid $color-gray-4D;
+        width: 7.4rem;
         height: 2.4rem;
-
+    
         font-size: 1.4rem;
         line-height: 1.7rem;
         text-align: center;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
+    
+        width: 13rem;
+    }
+
+    &__danger {
+        border: 1px solid $color-red-BA;
+        color: white;
+        background-color: $color-red-BA;
+    }
+}
+
+// IMAGE
+.form-image {
+    display: grid;
+    grid-template-rows: [title-s] 1fr [title-e image-s] 13.7rem [image-e];
+    grid-template-columns: [s] 16rem [e];
+
+    & > * {
+        grid-column: s/e;
+    }
+
+    &__title {
+        @include red-title;
+        margin-bottom: 2rem;
+        grid-row: title-s/title-e;
+    }
+    &__image {
+        height: 13.7rem;
+        width: 16rem;
+        border: none;
+        background-color: rgb(218, 218, 218);
+        grid-row: image-s/image-e;
+        object-fit: cover;
+    }
+    &__replace {
+        border-radius: 1.6rem;
+        border: 1px solid white;
+        background-color: white;
+
+        width: 13rem;
+        height: 2.4rem;
+    
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        text-align: center;
+
+        color: $color-red-BA;
+        grid-row: image-s/image-e;
+
+        justify-self: center;
+        align-self: center;
     }
 }

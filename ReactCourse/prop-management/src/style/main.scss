@@ -1,5 +1,6 @@
 // BASE
 @import 'variables';
+@import 'mixins';
 @import 'base';
 
 // HEADER
@@ -18,7 +19,7 @@
 @import 'dashboard';
 @import 'tab-nav';
 
-// NEWSLETTER
+// NEWSLETTERS
 @import 'newsletter-grid';
 @import 'newsletter-box';
 @import 'newsletter-archive';
@@ -26,5 +27,5 @@
 @import 'newsletter-new';
 @import 'newsletter-new-form';
 
-// BUTTON 
-@import 'button' 
+// BUTTON
+@import 'button';
