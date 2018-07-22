@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import * as actions from '../../actions';
 
 import NewsletterBox from './newsletterBox';
 import NewsletterArchive from './newsletterArchive';
@@ -11,8 +14,13 @@ class NewsletterGrid extends Component {
         this.props.history.push('/newsletter/new');
     }
 
-    render() {
+    componentDidMount() {
+        this.props.fetchNewsletters();
+    }
 
+    
+    render() {
+        
         const latest = {
             _id: '115',
             title: 'Happy Holidays Fam',
@@ -20,7 +28,7 @@ class NewsletterGrid extends Component {
             date: new Date(),
             imageUrl: 'http://via.placeholder.com/960x258'
         }
-
+        
         return (
             <div className='newsletter-grid'>
                 <Button className='newsletter-grid__button' icon='fas fa-plus' callback={() => this.handleAddNewsletter()}/>
@@ -32,4 +40,4 @@ class NewsletterGrid extends Component {
     }
 }
 
-export default NewsletterGrid;
+export default connect(null, actions)(NewsletterGrid);

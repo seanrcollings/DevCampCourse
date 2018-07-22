@@ -15,8 +15,8 @@ class NewNewsletter extends Component {
     }
 
     onCancel = () => {
-        this.props.history.push('/dashboard')
-        // console.log('trying to cancel');
+        // this.props.history.push('/dashboard')
+        console.log('trying to cancel');
     }
 
     render() {
