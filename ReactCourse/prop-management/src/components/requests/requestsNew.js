@@ -8,15 +8,16 @@ import InputForm from '../inputForm';
 class NewRequest extends Component {
 
     onSubmit = (fields) => {
-        this.props.createNewRequest(this.props._id, fields, () => {
+        const { title, body, image } = fields;
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('body', body);
+        formData.append('image', image) 
+
+        console.log(formData)
+        this.props.createNewRequest(this.props._id, formData, () => {
             this.props.history.push('/dashboard')
         })
-        // if(button == 'submit') {
-        //   // save new newsletter on the backend. perform a post request here.
-        //   console.log('trying to submit to backend.');
-        // } 
-        // this.props.history.push('/dashboard')
-        console.log('trying to submit');
     }
 
     onCancel = () => {

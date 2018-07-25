@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
+
+import { connect } from 'react-redux';
+
 import RequestsItem from './requestsItem';
 
 class Requests extends Component {
     render() {
         return (
             <div className = 'requests'>
-                <RequestsItem />
-                <RequestsItem />
-                <RequestsItem />
+            {
+                this.props.requests.map(requestItem => {
+                    if(requestItem.status === this.props.selectedRequestType){
+                        return <RequestsItem {...requestItem} key ={requestItem._id} />
+                    }
+                })
+            }
             </div>
         )
     }
 }
 
-export default Requests
+function mapStateToProps(state) {
+    const { requests, selectedRequestType } = state.requests;
+    return {
+        requests,
+        selectedRequestType
+    }
+}
+
+export default connect(mapStateToProps)(Requests)

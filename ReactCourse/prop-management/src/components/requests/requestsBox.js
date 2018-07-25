@@ -5,10 +5,12 @@ import * as actions from '../../actions'
 
 class RequestsBox extends Component {
     render() {
-        const { date } = this.props;
-        const { count, title} = this.props;
+        const { count, title, type} = this.props;
         return (
-            <a onClick = {() => this.props.changeSelectedRequestType(title)} className={`requests-box ${this.props.selectedRequestType === title ? 'requests-box-active' : 'requests-box-inactive'}`}>
+            <a 
+             onClick = {() => this.props.changeSelectedRequestType(type)}
+             className={`requests-box ${this.props.selectedRequestType === type ? 'requests-box-active' : 'requests-box-inactive'}`}
+            >
                 <div className='requests-box__count'>{count}</div>
                 <div className='requests-box__title'>{title}</div>
                 <div className='requests-box__point'></div>

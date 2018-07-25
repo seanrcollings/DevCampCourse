@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 
 
@@ -11,8 +12,8 @@ export class FormInput extends Component {
                     className='form-input__input'
                     type={type}
                     {...input}
-                    placeholder={placeholder}   
-                    value={editValue ? editValue : input.value} 
+                    placeholder={placeholder}
+                    value={editValue ? editValue : input.value}    
                 />
             </div>
         )
@@ -30,10 +31,10 @@ export class FormTextArea extends Component {
                     type={type}
                     {...input}
                     placeholder={placeholder} 
-                    value={editValue ? editValue : input.value}
-                >
+                    value={editValue ? editValue : input.value}   
+                />
                 
-                </textarea>
+                {/* </textarea> */}
             </div>
         )
     }
@@ -62,33 +63,42 @@ export class FormButton extends Component {
 }
 
 export class FormImage extends Component {
+
+    handleSelectedImage = (event) => {
+        const { input: { onChange } } = this.props;
+        var image = document.getElementById('newsletter-new-image');
+        image.src = URL.createObjectURL(event.target.files[0]);
+        onChange(event.target.files[0])
+    }
+
     render() {
         const { className, title, input, imageUrl } = this.props;
         return (
             <div className={`${className} form-image`}>
                 <label className='form-image__title'>{title}</label>
                 <img
+                    id='newsletter-new-image'
                     className='form-image__image'
                     src={imageUrl} 
                 />
                 <input
                     className='form-image__replace'
                     type='button'
-                    // id=''
                     value='Replace'
                     onClick={
                         () => document.getElementById('file') ? document.getElementById('file').click() : ''
                     }
                 />
-                <input {...input} 
-                        type='file'
-                        style={{display: 'none'}}
-                        id='file'
-                        name='file'
-                        accepts='image/*'
-                        value={undefined}
-                        />
-                {/* replace button/input goes here */}
+                <input 
+                    {...input} 
+                    type='file'
+                    style={{display: 'none'}}
+                    id='file'
+                    name='file'
+                    accepts='image/*'
+                    value={undefined}
+                    onChange={this.handleSelectedImage}
+                />
             </div>
         )
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Icon from '../icon';
 import Button from '../button';
+import ROOT_URL from '../../config'
 
 import AnimateHeight from 'react-animate-height';
 
@@ -15,8 +16,8 @@ class RequestsItem extends Component {
         }
     }
 
-    toggleDropdown = () => {
-        var element = document.getElementById('requests-item');
+    toggleDropdown = (_id) => {
+        var element = document.getElementById(_id);
         if(this.state.height === 0) {
             this.setState({height: 'auto'})
             element.classList.add('bg-F8')
@@ -26,16 +27,19 @@ class RequestsItem extends Component {
         }
     }
     render() {
+        const {_id, title, body, date, imageUrl} = this.props;
+        const parsedDate = new Date(date);
+
         return (
-            <div id = 'requests-item' className = 'requests-item'>
+            <div id = {_id} className = 'requests-item'>
                 
                 <Icon className = 'requests-item__icon'
                   icon='fas fa-exclamation-triangle'
                 />
                 
                 <div className = 'requests-item__title'>
-                    <div className = 'requests-item__title__text'>My door fell down dog</div>
-                    <Icon callback = {() => this.toggleDropdown()} className = 'requests-item__title__arrow' icon = 'fas fa-sort-down'/>
+                    <div className = 'requests-item__title__text'>{title}</div>
+                    <Icon callback = {() => this.toggleDropdown(_id)} className = 'requests-item__title__arrow' icon = 'fas fa-sort-down'/>
                 </div>
                 
                 <div className = 'requests-item__tenant-unit'>
@@ -43,7 +47,11 @@ class RequestsItem extends Component {
                 </div>
                 
                 <div className = 'requests-item__date'>
-                    2/21/12
+                    { parsedDate.getMonth() + 1 }
+                    /
+                    { parsedDate.getDate() }
+                    /
+                    { parsedDate.getFullYear() - 2000 } 
                 </div>
                 
                 <Button className = 'requests-item__move'
@@ -54,12 +62,8 @@ class RequestsItem extends Component {
                 <div className = 'requests-item__description'>
                     <AnimateHeight duration = {300} height ={this.state.height}>
                         <div className = 'requests-item__description'>
-                            <img className = 'requests-item__description-image' src = 'http://via.placeholder.com/160x94'/>
-                            <p className = 'requests-item__description-text'>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                            standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 
-                            1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                            including versions of Lorem Ipsum</p>
+                            <img className = 'requests-item__description-image' src = {`${ROOT_URL}/${imageUrl}`}/>
+                            <p className = 'requests-item__description-text'>{body}</p>
                         </div>
                      </AnimateHeight>
                 </div>

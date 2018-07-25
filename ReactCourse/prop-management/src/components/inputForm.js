@@ -30,49 +30,49 @@ class InputForm extends Component {
         <form onSubmit={handleSubmit} className="input-form">
             <FormTitle className="input-form__title" text={formTitle} />
             <Field
-            className="input-form__newsletter-title"
-            placeholder={titlePlaceholder ? titlePlaceholder : this.default.titlePlaceholder}
-            name="title"
-            type="text"
-            title="Newsletter Title"
-            component={FormInput}
-            editValue={title ? title : this.default.title}
+                className="input-form__newsletter-title"
+                placeholder={titlePlaceholder ? titlePlaceholder : this.default.titlePlaceholder}
+                name="title"
+                type="text"
+                title="Newsletter Title"
+                component={FormInput}
+                editValue={title ? title : this.default.title}
             />  
             <Field
-            className="input-form__body"
-            placeholder={bodyPlaceholder ? bodyPlaceholder : this.default.bodyPlaceholder}
-            name="body"
-            type="text"
-            title="Body"
-            component={FormTextArea}
-            editValue={body ? body : this.default.body}
+                className="input-form__body"
+                placeholder={bodyPlaceholder ? bodyPlaceholder : this.default.bodyPlaceholder}
+                name="body"
+                type="text"
+                title="Body"
+                component={FormTextArea}
+                editValue={body ? body : this.default.body}
             />
             <Field
-            className="input-form__submit"
-            small={true}
-            danger={true}
-            name="submit"
-            type="submit"
-            title="Submit"
-            component={FormButton}
+                className="input-form__submit"
+                small={true}
+                danger={true}
+                name="submit"
+                type="submit"
+                title="Submit"
+                component={FormButton}
             />  
             <Field
-            className="input-form__cancel"
-            small={true}
-            name="cancel"
-            type="button"
-            title="Cancel"
-            component={FormButton}
-            onClick={this.props.onCancel}
+                className="input-form__cancel"
+                small={true}
+                name="cancel"
+                type="button"
+                title="Cancel"
+                component={FormButton}
+                onClick={this.props.onCancel}
             />  
             <Field
-            className="input-form__image"
-            small={true}
-            name="image"
-            type="file"
-            title="Image"
-            component={FormImage}
-            imageUrl={imageUrl}
+                className="input-form__image"
+                small={true}
+                name="image"
+                type="file"
+                title="Image"
+                component={FormImage}
+                imageUrl={imageUrl}
             />  
 
 
