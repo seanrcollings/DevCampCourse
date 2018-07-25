@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
+
 import Button from '../button';
+
+import history from '../../history'
 
 class NewsletterLatest extends Component {
 
     handleEdit = () => {
-        this.props.history.push('/newsletter/edit');
+        history.push(`/newsletter/edit/${this.props._id}`);
     }
 
     render() {
-        const { title, imageUrl, body } = this.props;
+        const { title, imageUrl, body, __id } = this.props;
         return (
             <div className='newsletter-latest'>
                 <h1 className='newsletter-latest__title'>{title}</h1>
@@ -21,5 +26,7 @@ class NewsletterLatest extends Component {
         )
     }
 }
+
+
 
 export default NewsletterLatest;

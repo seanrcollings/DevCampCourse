@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux'
+import * as actions from '../../actions'
+
 import InputForm from '../inputForm';
 
-class NewNewsletter extends Component {
+class NewRequest extends Component {
 
     onSubmit = (fields) => {
-
+        this.props.createNewRequest(this.props._id, fields, () => {
+            this.props.history.push('/dashboard')
+        })
         // if(button == 'submit') {
         //   // save new newsletter on the backend. perform a post request here.
         //   console.log('trying to submit to backend.');
@@ -20,17 +25,21 @@ class NewNewsletter extends Component {
 
     render() {
         return (
-            <div className='new-newsletter'>
-                <InputForm 
+            <div className='new-request'>
+                <InputForm
                 onCancel={() => this.onCancel()} 
                 onSubmit={(event) => this.onSubmit(event)}
-                formTitle = 'New Newsletter'
-                titlePlaceholder = 'Newsletter Title'
-                bodyPlaceholder = 'Newsletter Body'
+                formTitle = 'New Request'
+                titlePlaceholder = 'New Request Title'
+                bodyPlaceholder = 'New Request Body'
                 />
             </div>
         )
     }
 }
 
-export default NewNewsletter;
+function mapStateToProps(state) {
+    const { _id } = state.auth.user;
+    return { _id }
+}
+export default connect(mapStateToProps, actions)(NewRequest);

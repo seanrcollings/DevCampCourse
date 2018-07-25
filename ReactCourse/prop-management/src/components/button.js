@@ -7,5 +7,7 @@ export default function Button({className, callback, text, icon}) {
                 <i className={icon}></i>
             </a>
         )
-    } 
+    } else {
+        return null
+    }
 }
