@@ -10,6 +10,7 @@ const createStoreWithMiddleware = applyMiddleware(reduxThunk)(compose((window.de
 
 // import 'bootstrap/dist/css/bootstrap.css';
 import './style/main.scss';
+
 import history from './history';
 
 import Layout from './components/layout';
@@ -23,9 +24,9 @@ import Signin from './components/auth/signin';
 import Dashboard from './components/dashboard';
 import NewNewsletter from './components/newsletter/newsletterNew';
 import EditNewsletter from './components/newsletter/newsletterEdit';
-import DetailNewsletter from './components/newsletter/newsletterDetail'
+import NewsletterDetail from './components/newsletter/newsletterDetail';
 
-import NewRequest from './components/requests/requestsNew.js'
+import NewRequest from './components/requests/requestsNew';
 
 function main() {
   ReactDOM.render(
@@ -33,23 +34,17 @@ function main() {
       <Router history={history}>
         <Switch>
           <Layout>
-
-            {/* AUTH */}
             <Route path='/' exact component={Signin}/>
             <Route path='/signin' component={Signin}/>
             <Route path='/signup' component={Signup}/>
 
-            {/* <Route path='/dashboard' component={Dashboard}/> */}
             <Route path='/dashboard' component={requireAuth(Dashboard)}/>
-            
-            {/* DASHBOARD */}
+
             <Route path='/newsletter/new' component={requireAuth(NewNewsletter)}/>
             <Route path='/newsletter/edit/:id' component={requireAuth(EditNewsletter)}/>
-            <Route path='/newsletter/detail/:id' component={requireAuth(DetailNewsletter)}/>
+            <Route path='/newsletter/detail/:id' component={requireAuth(NewsletterDetail)}/>
 
-            {/* REQUESTS */}
-            <Route path='/requests/new' component={requireAuth(NewRequest)}/>
-
+            <Route path='/request/new' component={requireAuth(NewRequest)}/>
           </Layout>
         </Switch>
       </Router>

@@ -36,7 +36,6 @@
         padding-left: 2rem;
         font-size: 1.6rem;
         font-weight: 500;
-        font-family: inherit;
     }
 }
 
@@ -125,6 +124,7 @@
         border: none;
         background-color: rgb(218, 218, 218);
         grid-row: image-s/image-e;
+        object-fit: cover;
     }
     &__replace {
         border-radius: 1.6rem;

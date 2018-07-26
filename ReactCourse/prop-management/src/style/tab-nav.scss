@@ -17,12 +17,11 @@
 
         grid-column-gap: 4.6rem;
         border-bottom: 1px solid $color-gray-E6;
-        
     }   
-    
+
     &__tab {
         grid-row: m/e;
-        
+    
         height: 100%;
         font-size: 1.6rem;
         font-weight: 500;
@@ -32,12 +31,8 @@
         // padding-bottom: 2rem;
         // border-bottom: 1px solid $color-red-BA;
         border-bottom: 2px solid transparent;
-        
-        &:hover {
-            cursor: pointer;
-        }
     }
-    
+
     &__active {
         color: $color-red-BA;
         border-bottom: 2px solid $color-red-BA;

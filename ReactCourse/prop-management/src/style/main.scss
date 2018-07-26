@@ -20,12 +20,20 @@
 @import 'tab-nav';
 
 // NEWSLETTERS
-@import 'newsletter/newsletter-imports';
+@import 'newsletter-grid';
+@import 'newsletter-box';
+@import 'newsletter-archive';
+@import 'newsletter-latest';
+@import 'newsletter-new';
+@import 'newsletter-new-form';
+@import 'newsletter-detail';
 
 // BUTTON
 @import 'button';
 
-// REQUESTS
-@import 'requests/requests-imports';
-
-@import 'input-form'
+// REQUESTS 
+@import 'requests-grid';
+@import 'requests-boxes';
+@import 'requests-box';
+@import 'requests';
+@import 'requests-item';

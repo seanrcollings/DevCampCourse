@@ -1,36 +1,48 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import InputForm from '../inputForm';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
+import NewNewsletterForm from "./newsletterNewForm";
 
 class NewNewsletter extends Component {
 
-    onSubmit = (fields) => {
+  onSubmit = fields => {
 
-        // if(button == 'submit') {
-        //   // save new newsletter on the backend. perform a post request here.
-        //   console.log('trying to submit to backend.');
-        // } 
-        // this.props.history.push('/dashboard')
-        console.log('trying to submit');
-    }
+    const { title, body, image } = fields;
 
-    onCancel = () => {
-        this.props.history.push('/dashboard')
-    }
+    var formData = new FormData();
+    formData.append('title', title);
+    formData.append('body', body);
+    formData.append('image', image);
 
-    render() {
-        return (
-            <div className='new-newsletter'>
-                <InputForm 
-                onCancel={() => this.onCancel()} 
-                onSubmit={(event) => this.onSubmit(event)}
-                formTitle = 'New Newsletter'
-                titlePlaceholder = 'Newsletter Title'
-                bodyPlaceholder = 'Newsletter Body'
-                />
-            </div>
-        )
-    }
+    this.props.createNewNewsletter(formData, () => {
+        this.props.history.push("/dashboard");
+    })
+    
+  };
+
+  onCancel = () => {
+    this.props.history.push("/dashboard");
+  };
+
+  render() {
+    return (
+      <div className="new-newsletter">
+        <NewNewsletterForm
+          onCancel={() => this.onCancel()}
+          onSubmit={event => this.onSubmit(event)}
+          formTitle='New Newsletter'
+          fieldOnePlaceholder='Newsletter Title'
+          fieldOneTitle='Newsletter Title'
+          fieldTwoPlaceholder='Body Here'
+          fieldTwoTitle='Body'
+        />
+      </div>
+    );
+  }
 }
+
+NewNewsletter = connect(null, actions)(NewNewsletter);
 
 export default NewNewsletter;

@@ -7,14 +7,14 @@ import RequestsItem from './requestsItem';
 class Requests extends Component {
     render() {
         return (
-            <div className = 'requests'>
-            {
-                this.props.requests.map(requestItem => {
-                    if(requestItem.status === this.props.selectedRequestType){
-                        return <RequestsItem {...requestItem} key ={requestItem._id} />
-                    }
-                })
-            }
+            <div className='requests'>
+                {
+                    this.props.requests.map(requestItem => {
+                        if(requestItem.status == this.props.selectedRequestType) {
+                            return <RequestsItem {...requestItem} key={requestItem._id}/>
+                        }
+                    })
+                }
             </div>
         )
     }
@@ -28,4 +28,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Requests)
+export default connect(mapStateToProps)(Requests);

@@ -1,10 +1,9 @@
-
 import React, { Component } from 'react';
 
 
 export class FormInput extends Component {
     render() {
-        const { className, title, input, type, placeholder, editValue } = this.props;
+        const { className, title, input, type, placeholder } = this.props;
         return (
             <div className={`${className} form-input`}>
                 <label className='form-input__title'>{title}</label>
@@ -12,8 +11,7 @@ export class FormInput extends Component {
                     className='form-input__input'
                     type={type}
                     {...input}
-                    placeholder={placeholder}
-                    value={editValue ? editValue : input.value}    
+                    placeholder={placeholder} 
                 />
             </div>
         )
@@ -22,7 +20,7 @@ export class FormInput extends Component {
 
 export class FormTextArea extends Component {
     render() {
-        const { className, title, input, type, placeholder, editValue } = this.props;
+        const { className, title, input, type, placeholder } = this.props;
         return (
             <div className={`${className} form-textarea`}>
                 <label className='form-textarea__title'>{title}</label>
@@ -31,7 +29,6 @@ export class FormTextArea extends Component {
                     type={type}
                     {...input}
                     placeholder={placeholder} 
-                    value={editValue ? editValue : input.value}   
                 />
                 
                 {/* </textarea> */}
@@ -89,16 +86,16 @@ export class FormImage extends Component {
                         () => document.getElementById('file') ? document.getElementById('file').click() : ''
                     }
                 />
-                <input 
-                    {...input} 
-                    type='file'
-                    style={{display: 'none'}}
-                    id='file'
-                    name='file'
-                    accepts='image/*'
-                    value={undefined}
-                    onChange={this.handleSelectedImage}
-                />
+                <input {...input} 
+                        type='file'
+                        style={{display: 'none'}}
+                        id='file'
+                        name='file'
+                        accepts='image/*'
+                        value={undefined}
+                        onChange={this.handleSelectedImage}
+                        />
+                {/* replace button/input goes here */}
             </div>
         )
     }

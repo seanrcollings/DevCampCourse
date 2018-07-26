@@ -1,48 +1,48 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-import * as actions from '../../actions'
-import InputForm from '../inputForm';
+import EditNewsletterForm from "./newsletterEditForm";
 
 class EditNewsletter extends Component {
 
-    onSubmit = (fields) => {
+  onSubmit = fields => {
 
-        // if(button == 'submit') {
-        //   // save new newsletter on the backend. perform a post request here.
-        //   console.log('trying to submit to backend.');
-        // } 
-        // this.props.history.push('/dashboard')
-        console.log('trying to submit');
-    }
+    const { title, body, image } = fields;
 
-    onCancel = () => {
-        this.props.history.push('/dashboard')
-    }
+    var formData = new FormData();
+    formData.append('title', title);
+    formData.append('body', body);
+    formData.append('image', image);
+  
+    this.props.editNewsletter(this.props.match.params.id, formData, () => {
+        this.props.history.push("/dashboard");
+    })
 
-    componentDidMount() {
-        this.props.fetchNewsletterWithId(this.props.match.params.id)
-    }
+  };
 
-    render() {
-        return (
-            <div className='new-newsletter'>
-                <InputForm 
-                newsletterToEdit={this.props.newsletterToEdit}
-                onCancel={() => this.onCancel()}
-                onSubmit={(event) => this.onSubmit(event)}
-                formTitle = 'Edit Newsletter'
-                 />
-            </div>
-        )
-    }
+  onCancel = () => {
+    this.props.history.push("/dashboard");
+  };
+
+  componentDidMount() {
+      this.props.fetchNewsletterWithId(this.props.match.params.id);
+  }
+
+  render() {
+    return (
+      <div className="new-newsletter">
+        <EditNewsletterForm
+          onCancel={() => this.onCancel()}
+          onSubmit={event => this.onSubmit(event)}
+          formTitle='Edit Newsletter'
+          fieldOneTitle='Newsletter Title'
+          fieldTwoTitle='Body'
+        />
+      </div>
+    );
+  }
 }
 
-function mapStateToProps(state) {
-    const { newsletterToEdit } = state.newsletters;
-    return {
-        newsletterToEdit
-    }
-}
 
-export default connect(mapStateToProps, actions)(EditNewsletter);
+export default connect(null, actions)(EditNewsletter);
