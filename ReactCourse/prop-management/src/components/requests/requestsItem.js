@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { connect } from 'react-redux'
+import * as actions from '../../actions'
+
 import Icon from '../icon';
 import Button from '../button';
 import ROOT_URL from '../../config'
@@ -55,7 +58,7 @@ class RequestsItem extends Component {
                 </div>
                 
                 <Button className = 'requests-item__move'
-                  callback={() => console.log('Trying to move request item')}
+                  callback={() => this.props.changeStatus({_id, status})}
                   icon ='fas fa-wrench'
                 />
                 
@@ -72,4 +75,4 @@ class RequestsItem extends Component {
     }
 }
 
-export default RequestsItem;
+export default connect(null, actions)(RequestsItem);
